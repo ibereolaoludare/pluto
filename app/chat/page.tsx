@@ -3,7 +3,7 @@
 import Header from "@/components/ui/header";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, Suspense } from "react";
 import { Send } from "lucide-react";
 import { FormattedText } from "@/components/ui/formatted-text";
 import { useSearchParams } from "next/navigation";
@@ -26,7 +26,7 @@ type GeminiApiResponse = {
   error?: string;
 };
 
-export default function ChatPage() {
+function ChatPageContent() {
   const inputRef = useRef<HTMLInputElement>(null);
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const searchParams = useSearchParams();
@@ -227,5 +227,18 @@ export default function ChatPage() {
         </div>
       </div>
     </main>
+  );
+}
+export default function ChatPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex items-center justify-center h-screen">
+          Loading...
+        </div>
+      }
+    >
+      <ChatPageContent />
+    </Suspense>
   );
 }

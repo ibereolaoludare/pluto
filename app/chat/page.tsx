@@ -206,11 +206,14 @@ function ChatPageContent() {
                   onChange={(e) => setInputValue(e.target.value)}
                   placeholder="Ask anything or give a detailed prompt..."
                   disabled={isLoading}
-                  className="w-full h-12 sm:h-14 pl-4 pr-20 sm:pr-24 rounded-2xl border-slate-200 bg-white backdrop-blur-sm focus-visible:border-purple-500/60 focus-visible:ring-slate-300 text-sm sm:text-base text-slate-900 placeholder:text-slate-400 dark:border-purple-500/30 dark:bg-purple-950/30 dark:focus-visible:border-purple-500/60 dark:focus-visible:ring-purple-500/20 dark:text-purple-50 dark:placeholder:text-purple-300/40"
+                  className="w-full h-12 sm:h-14 pl-4 sm:pr-24 rounded-2xl border-slate-200 bg-white backdrop-blur-sm focus-visible:border-purple-500/60 focus-visible:ring-slate-300 text-sm sm:text-base text-slate-900 placeholder:text-slate-400 dark:border-purple-500/30 dark:bg-purple-950/30 dark:focus-visible:border-purple-500/60 dark:focus-visible:ring-purple-500/20 dark:text-purple-50 dark:placeholder:text-purple-300/40"
                 />
                 <div className="absolute right-3 top-1/2 -translate-y-1/2 space-x-2 items-center">
                   <kbd className="pointer-events-none hidden sm:inline-flex h-6 select-none items-center gap-1 rounded border border-slate-200 bg-white px-2 font-mono text-[10px] font-medium text-slate-600 shadow-sm dark:border-purple-500/30 dark:bg-purple-950/50 dark:text-purple-300/60">
                     <span className="text-xs">⌘</span>K
+                  </kbd>
+                  <kbd className="pointer-events-none hidden sm:inline-flex h-6 select-none items-center gap-1 rounded border border-slate-200 bg-white px-2 font-mono text-[10px] font-medium text-slate-600 shadow-sm dark:border-purple-500/30 dark:bg-purple-950/50 dark:text-purple-300/60">
+                    /
                   </kbd>
                 </div>
               </div>
